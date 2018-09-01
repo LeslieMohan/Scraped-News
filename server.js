@@ -21,9 +21,9 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-//mongoose.connect('mongodb://https://peaceful-inlet-61528.herokuapp.com/');
+mongoose.connect('mongodb://https://peaceful-inlet-61528.herokuapp.com/');
 
-mongoose.connect('mongodb://localhost/Scraped-News');
+//mongoose.connect('mongodb://localhost/Scraped-News');
 
 
 var db = mongoose.connection;
