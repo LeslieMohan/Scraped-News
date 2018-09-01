@@ -1,4 +1,3 @@
-// Require mongoose
 var mongoose = require("mongoose");
 // Create a schema class
 var Schema = mongoose.Schema;
@@ -8,9 +7,9 @@ var CommentSchema = new Schema({
     body: {
         type: String
     },
-    article: {
-        type: Schema.Types.ObjectId,
-        ref: "Article"
+    body: {
+        type: String,
+        required: true
     }
 });
 

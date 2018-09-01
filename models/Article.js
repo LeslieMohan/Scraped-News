@@ -1,6 +1,5 @@
-// Require mongoose
 var mongoose = require("mongoose");
-var Comment = require("./Comment");
+
 // Create Schema class
 var Schema = mongoose.Schema;
 
@@ -13,7 +12,12 @@ var ArticleSchema = new Schema({
   link: {
     type: String,
     required: true
-  }
+  },
+  comment: [{
+    type: Schema.Types.ObjectId,
+    ref: "Comment"
+  }]
+
 });
 
 // Create the Article model with the ArticleSchema

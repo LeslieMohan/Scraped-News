@@ -1,19 +1,80 @@
-body {
-  background-image: url("/assets/images/newspaper.jpg");
-  /*background-size: cover;
-  background-repeat: no-repeat;*/
-  padding-top: 70px;
+body{
+  background: url('../images/multisports.jpg');
+  /*min-height: 100%;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Cormorant Garamond', serif, sans-serif;
+  font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.deleteComment {
-display: inline-block;
+main{
+  flex: 1 0 auto;
 }
 
-.previousComment {
-  display: inline-block;
-  width: 90%
+.articleBody{
+  height: 200px;
+  font-size: 20px;
+  overflow-y: scroll;
+  line-height: 150%;
+  color: lightgrey;
+
+}
+.card-panel {
+  background-color:black;
+  opacity: .87;
+  color: white;
+  text-align: center;
+}
+.card {
+  background: url('../images/newspaper.jpg');
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  opacity: .95;
 }
 
-#scrape {
-  margin: 8px 0px;
+#nameComment{
+  /*border-bottom: 2px solid #ec407a;*/
+  font-weight: bold;
+  background: lightgrey;
+  color: white;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color:lightgray;
+ margin: 0 10px;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid lightgrey;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color:lightgray;
+ margin: 0 10px 0 10px;
+}
+
+#btnSignUp {
+  color: lightgrey;
+}
+#icon_prefix {
+  margin: 0 10px 0 10px;
+}
+#icon_telephone {
+  margin: 0 10px 0 10px;
+}
+.nav {
+  font-size: 15px;
+  
+}
+
+footer {
+  text-align: center;
+  
 }
