@@ -1,6 +1,5 @@
 body{
   background: url('../images/multisports.jpg');
-  /*min-height: 100%;*/
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,7 +24,7 @@ main{
 }
 .card-panel {
   background-color:black;
-  opacity: .87;
+  opacity: .85;
   color: white;
   text-align: center;
 }
@@ -38,43 +37,53 @@ main{
 }
 
 #nameComment{
-  /*border-bottom: 2px solid #ec407a;*/
   font-weight: bold;
   background: lightgrey;
   color: white;
 }
 
-/* label focus color */
-.input-field input[type=text]:focus + label {
- color:lightgray;
- margin: 0 10px;
-}
-/* label underline focus color */
+
 .input-field input[type=text]:focus {
+ color:lightgray;
  border-bottom: 1px solid lightgrey;
  box-shadow: 0 1px 0 0 #000;
+ 
 }
-/* icon prefix focus color */
+
+.input-field input[type=submit] {
+ background: dimgrey;
+}
+
 .input-field .prefix.active {
  color:lightgray;
- margin: 0 10px 0 10px;
 }
 
 #btnSignUp {
+  background: dimgrey;
   color: lightgrey;
 }
-#icon_prefix {
-  margin: 0 10px 0 10px;
+#Name {
+  margin: 0 0 0 10px;
 }
-#icon_telephone {
-  margin: 0 10px 0 10px;
+#Comment {
+  margin: 0 0 0 10px;
 }
 .nav {
-  font-size: 15px;
+  font-size: 25px;
   
+}
+.left {
+  position: absolute;
+  left: 25px;
+  margin-top: 10px;
+}
+
+.right {
+  position: absolute;
+  right: 25px;
 }
 
 footer {
   text-align: center;
-  
 }
+
