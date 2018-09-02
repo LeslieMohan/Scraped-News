@@ -104,7 +104,7 @@ router.get('/articles-json', function(req, res) {
     });
 });
 
-//clear all articles for testing purposes
+//clear all articles for test
 router.get('/clearAll', function(req, res) {
     Article.remove({}, function(err, doc) {
         if (err) {

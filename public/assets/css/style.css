@@ -62,6 +62,33 @@ main{
   background: dimgrey;
   color: lightgrey;
 }
+.curl-top-left {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.curl-top-left:before {
+  pointer-events: none;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, white 45%, #aaa 50%, #ccc 50%, #fff 80%);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+.curl-top-left:hover:before,
+.curl-top-left:focus:before,
+.curl-top-left:active:before {
+  width: 40px;
+  height: 40px;
+}
+
 #Name {
   margin: 0 0 0 10px;
 }
@@ -81,6 +108,9 @@ main{
 .right {
   position: absolute;
   right: 25px;
+}
+#scrape:hover {
+  text-decoration: underline;
 }
 
 footer {
