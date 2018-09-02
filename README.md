@@ -8,5 +8,5 @@ Scraped News is a web app that allows users to view and leave comments on the la
 [Scraped News](https://peaceful-inlet-61528.herokuapp.com)
 
 
-![Screen Shot](./public/assets/images/ScreenShot.png)
+![Screen Shot](/public/assets/images/ScreenShot.png)
 
