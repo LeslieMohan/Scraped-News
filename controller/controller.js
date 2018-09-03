@@ -19,19 +19,20 @@ router.get('/', function(req, res) {
 // A GET request to scrape the sportsnet website
 router.get('/scrape', function(req, res) {
     //grab the body of the html with request
-    request('http://www.sportsnet.ca', function(error, response, html) {
+    request('http://www.nhl.com', function(error, response, html) {
         //load into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(html);
         var titlesArray = [];
         // get every article
-        $('.featured-link').each(function(i, element) {
+        $('.mixed-feed__item-header-text').each(function(i, element) {
             // Save as an empty result object
             var result = {};
 
             // Add the text and href of every link
             //save as properties of the result object
-            result.title = $(this).children(".featured-list").children('h4').text();
-            result.link = $(this).attr('href');
+            result.title = $(this).children("a").children('h4').text();
+            result.summary = $(this).children("a").children('h5').text();
+            result.link = $(this).children("a").attr('href');
 
             //make sure no empty title or links are sent to mongodb
             if(result.title !== "" && result.link !== ""){
@@ -118,37 +119,29 @@ router.get('/clearAll', function(req, res) {
 });
 
 router.get('/readArticle/:id', function(req, res){
-  var articleId = req.params.id;
-  var hbsObj = {
-    article: [],
-    body: []
-  };
+  
 
     // //find the article at the id
-    Article.findOne({ _id: articleId })
+    Article.findOne({ _id: req.params.id })
       .populate('comment')
       .exec(function(err, doc){
       if(err){
         console.log('Error: ' + err);
       } else {
-        hbsObj.article = doc;
-        var link = doc.link;
-        //grab article from link
-        request(link, function(error, response, html) {
-          var $ = cheerio.load(html);
+        
 
-          $('.featured-link').each(function(i, element){
-            hbsObj.body = $(this).children('.featured-list').children('p').text();
-            //send article body and comments to article.handlbars through hbObj
-            res.render('article', hbsObj);
+          
+            //send article body and comments to article.handlbars
+            res.render('article', { article: doc });
             //prevents loop through so it doesn't return an empty hbsObj.body
             return false;
-          });
-        });
-      }
+          };
+        
+      });
 
-    });
 });
+  
+
 
 // Create a new comment
 router.post('/comment/:id', function(req, res) {

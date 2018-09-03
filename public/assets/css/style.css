@@ -1,5 +1,5 @@
 body{
-  background: url('../images/multisports.jpg');
+  background: url('../images/anglenews2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -22,6 +22,7 @@ main{
   color: lightgrey;
 
 }
+
 .card-panel {
   background-color:black;
   opacity: .85;
