@@ -15,7 +15,7 @@ main{
 }
 
 .articleBody{
-  height: 200px;
+  height: 100px;
   font-size: 20px;
   overflow-y: scroll;
   line-height: 150%;
@@ -31,7 +31,9 @@ main{
 }
 .card {
   background: url('../images/newspaper.jpg');
+  height: 150px;
   text-align: center;
+  
   font-weight: bold;
   color: black;
   opacity: .95;
