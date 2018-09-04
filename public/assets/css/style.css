@@ -44,6 +44,15 @@ main{
   background: lightgrey;
   color: white;
 }
+.commentsleft {
+  text-align: center;
+}
+.commentCard {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  opacity: .95;
+}
 
 
 .input-field input[type=text]:focus {
